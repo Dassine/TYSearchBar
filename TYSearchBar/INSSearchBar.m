@@ -76,7 +76,7 @@ static NSTimeInterval const kINSSearchBarAnimationStepDuration = 0.25;
 
 - (id)initWithFrame:(CGRect)frame
 {
-    if ((self = [super initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), 34.0)]))
+    if ((self = [super initWithFrame:CGRectMake(CGRectGetMinX(frame), CGRectGetMinY(frame), CGRectGetWidth(frame), 45.0)]))
 	{
         // Initialization code
 		self.opaque = NO;
@@ -87,7 +87,7 @@ static NSTimeInterval const kINSSearchBarAnimationStepDuration = 0.25;
 		self.searchFrame.opaque = NO;
 		self.searchFrame.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 		self.searchFrame.layer.masksToBounds = YES;
-		self.searchFrame.layer.cornerRadius = CGRectGetHeight(self.bounds) / 2;
+        self.searchFrame.layer.cornerRadius = 5;//CGRectGetHeight(self.bounds) / 2;
 		self.searchFrame.layer.borderWidth = 0.5;
 		self.searchFrame.layer.borderColor = [UIColor clearColor].CGColor;
 		self.searchFrame.contentMode = UIViewContentModeRedraw;
@@ -133,7 +133,8 @@ static NSTimeInterval const kINSSearchBarAnimationStepDuration = 0.25;
 		
 		[searchImageViewOnContainerView addSubview:self.searchImageCrossRight];
 
-		self.searchImageViewOff = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.bounds) - kINSSearchBarInset - kINSSearchBarImageSize, (CGRectGetHeight(self.bounds) - kINSSearchBarImageSize) / 2, kINSSearchBarImageSize, kINSSearchBarImageSize)];
+//		self.searchImageViewOff = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.bounds) - kINSSearchBarInset - kINSSearchBarImageSize, (CGRectGetHeight(self.bounds) - kINSSearchBarImageSize) / 2, kINSSearchBarImageSize, kINSSearchBarImageSize)];
+        self.searchImageViewOff = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetWidth(self.bounds) - kINSSearchBarInset - kINSSearchBarImageSize -5, (CGRectGetHeight(self.bounds) - kINSSearchBarImageSize) / 2 - 10, kINSSearchBarImageSize*1.60, kINSSearchBarImageSize*1.6)];
 		self.searchImageViewOff.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
 		self.searchImageViewOff.alpha = 1.0;
 		self.searchImageViewOff.image = [UIImage imageNamed:@"NavBarIconSearch_white"];
